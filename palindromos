@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char palavra[21];
+    int ehPalindromo = 1;
+
+    printf("Digite uma palavra (até 20 letras): ");
+    scanf("%s", palavra);
+
+    int tamanho = strlen(palavra);
+
+    for(int i = 0, j = tamanho - 1; i < j; i++, j--) {
+        if(palavra[i] != palavra[j]) {
+            ehPalindromo = 0; 
+            break;           
+        }
+    }
+
+    if(ehPalindromo == 0) {
+        printf("Não é um palíndromo\n");
+    } else if(ehPalindromo == 1) {
+        printf("É um palíndromo\n");
+    }
+
+    return 0;
+}
